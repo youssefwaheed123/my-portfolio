@@ -57,7 +57,7 @@ const Hero = () => {
               title="Download my CV"
               position="right"
               icon={<MdDownload />}
-              cvUrl="/updatedCV_2.pdf"
+              cvUrl="/CV.pdf"
             />
           </div>
         </div>
