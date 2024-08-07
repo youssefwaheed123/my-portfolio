@@ -25,6 +25,15 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { IconType } from "react-icons/lib";
 
 const iconMapping: { [key: string]: IconType } = {
+  SiInternetcomputer,
+  SiMiro,
+  SiCanva,
+  SiExpress,
+  RiNextjsLine,
+  RiTailwindCssFill,
+  IoLogoJavascript,
+  GrMysql,
+  BiLogoPostgresql,
   FaJava,
   FaPython,
   FaCuttlefish,

@@ -135,8 +135,8 @@ export const tabs = [
     value: "Web Projects",
   },
   {
-    title: "OOP Projects",
-    value: "OOP Projects",
+    title: "Java Projects",
+    value: "Java Projects",
   },
 ];
 
@@ -151,21 +151,30 @@ interface Project {
   videoLink?: string;
 }
 
-export const oopProjects: Project[] = [
+export const javaProjects: Project[] = [
   {
     id: 1,
     title: "Circus Of Plates",
     content:
-      "A single player-game in which the clown tries to catch falling blocks, his score increases when he catches 3 consecutive blocks of same color.",
+      "A single player-game in which the clown tries to catch falling blocks, his score increases when he catches 3 consecutive blocks of the same color.",
     img: "./circusOfPlates.png",
     link: "https://github.com/youssefwaheed123/Circusofplatessss.git",
+    iconLists: ["FaJava"],
+  },
+  {
+    id: 2,
+    title: "Mini-paint Application",
+    content:
+      "A Java application to create, edit, and delete shapes.",
+    img: "./miniPaint.png",
+    link: "https://github.com/youssefwaheed123/miniPaint",
     iconLists: ["FaJava"],
   },
 ];
 
 export const webProjects: Project[] = [
   {
-    id: 2,
+    id: 1,
     title: "Simon Game",
     content:
       "Test your memory skills with this interactive Simon game implemented using vanilla JavaScript.",
@@ -174,7 +183,48 @@ export const webProjects: Project[] = [
     link: "https://github.com/adrianhajdin?tab=repositories",
     liveLink: "https://youssefwaheed123.github.io/simon-game/",
   },
+  {
+    id: 2,
+    title: "Gym Web App",
+    content:
+      "A comprehensive gym web application implemented using React.",
+    img: "/GymWebApp.png",
+    iconLists: ["FaReact", "IoLogoJavascript"],
+    link: "https://github.com/youssefwaheed123/gym-app",
+    liveLink: "https://milogym.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Circus Of Plates",
+    content:
+      "A single player-game implemented using React in which the clown tries to catch falling blocks, his score increases when he catches 3 consecutive blocks of the same color.",
+    img: "/CircusOfPlatesWebGame.png",
+    iconLists: ["FaReact", "IoLogoJavascript"],
+    link: "https://github.com/youssefwaheed123/circus-of-plates-web-game",
+    liveLink: "https://circus-of-plates-web-game.vercel.app/",
+  },
+  {
+    id: 4,
+    title: "Note Keeper",
+    content:
+      "A note-taking application implemented using React.",
+    img: "/KeeperApp.png",
+    iconLists: ["FaReact", "IoLogoJavascript"],
+    link: "https://github.com/youssefwaheed123/keeper-app",
+    liveLink: "https://note-keeper-web-app.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "PromptHub",
+    content:
+      "The ultimate hub for creative inspiration and innovative prompts across various fields",
+    img: "/prompthub.png",
+    iconLists: ["FaReact", "RiNextjsLine", "IoLogoJavascript"],
+    link: "https://github.com/youssefwaheed123/prompt-hub",
+    liveLink: "https://prompt-hub.netlify.app/",
+  },
 ];
+
 
 interface Education {
   title: string;
@@ -186,7 +236,7 @@ export const education: Education[] = [
   {
     title: "High School",
     description: "My high school journey at Riada Language School was a transformative experience that nurtured intellectual curiosity and personal growth. The school's rigorous academic environment and holistic approach fostered critical thinking, creativity, and global awareness. This journey shaped my vision for the future, instilling a deep appreciation for learning and a sense of purpose.",
-    content: '<Image src="/RiadaSchool.png" />',
+    content: '<Image src="/RiadaSchool.png" className="h-[30px] w-[30px]" />',
   },
   {
     title: "",
@@ -200,19 +250,4 @@ export const education: Education[] = [
   },
 ];
 
-export const workExperience = [];
 
-export const socialMedia = [
-  {
-    id: 1,
-    img: "/git.svg",
-  },
-  {
-    id: 2,
-    img: "/twit.svg",
-  },
-  {
-    id: 3,
-    img: "/link.svg",
-  },
-];

@@ -1,11 +1,11 @@
 import React from "react";
 import { Tabs } from "./ProjectTabs"; // Adjust the import path as needed
-import { tabs, webProjects, oopProjects } from "@/data"; // Adjust the import path as needed
+import { tabs, webProjects, javaProjects } from "@/data"; // Adjust the import path as needed
 
 const projects = {
-  All: [...webProjects, ...oopProjects],
+  All: [...webProjects, ...javaProjects],
   "Web Projects": webProjects,
-  "OOP Projects": oopProjects,
+  "Java Projects": javaProjects,
 };
 
 const Projects = () => {
