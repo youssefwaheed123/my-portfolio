@@ -135,6 +135,10 @@ export const tabs = [
     value: "Web Projects",
   },
   {
+    title: "Mobile Projects",
+    value: "Mobile Projects",
+  },
+  {
     title: "Java Projects",
     value: "Java Projects",
   },
@@ -158,7 +162,7 @@ export const javaProjects: Project[] = [
     content:
       "A single player-game in which the clown tries to catch falling blocks, his score increases when he catches 3 consecutive blocks of the same color.",
     img: "./circusOfPlates.png",
-    link: "https://github.com/youssefwaheed123/Circusofplatessss.git",
+    link: "https://github.com/youssefwaheedd/circus-of-plates.git",
     iconLists: ["FaJava"],
   },
   {
@@ -167,7 +171,7 @@ export const javaProjects: Project[] = [
     content:
       "A Java application to create, edit, and delete shapes.",
     img: "./miniPaint.png",
-    link: "https://github.com/youssefwaheed123/miniPaint",
+    link: "https://github.com/youssefwaheeds/miniPaint",
     iconLists: ["FaJava"],
   },
 ];
@@ -181,7 +185,7 @@ export const webProjects: Project[] = [
     img: "/SimonGame.png",
     iconLists: ["FaHtml5", "FaCss3Alt"],
     link: "https://github.com/adrianhajdin?tab=repositories",
-    liveLink: "https://youssefwaheed123.github.io/simon-game/",
+    liveLink: "https://youssefwaheedd.github.io/simon-game/",
   },
   {
     id: 2,
@@ -190,7 +194,7 @@ export const webProjects: Project[] = [
       "A comprehensive gym web application implemented using React.",
     img: "/GymWebApp.png",
     iconLists: ["FaReact", "IoLogoJavascript"],
-    link: "https://github.com/youssefwaheed123/gym-app",
+    link: "https://github.com/youssefwaheedd/gym-app",
     liveLink: "https://milogym.vercel.app/",
   },
   {
@@ -200,31 +204,30 @@ export const webProjects: Project[] = [
       "A single player-game implemented using React in which the clown tries to catch falling blocks, his score increases when he catches 3 consecutive blocks of the same color.",
     img: "/CircusOfPlatesWebGame.png",
     iconLists: ["FaReact", "IoLogoJavascript"],
-    link: "https://github.com/youssefwaheed123/circus-of-plates-web-game",
+    link: "https://github.com/youssefwaheedd/circus-of-plates-web-game",
     liveLink: "https://circus-of-plates-web-game.vercel.app/",
   },
   {
     id: 4,
-    title: "Note Keeper",
-    content:
-      "A note-taking application implemented using React.",
-    img: "/KeeperApp.png",
-    iconLists: ["FaReact", "IoLogoJavascript"],
-    link: "https://github.com/youssefwaheed123/keeper-app",
-    liveLink: "https://note-keeper-web-app.vercel.app/",
-  },
-  {
-    id: 5,
     title: "PromptHub",
     content:
       "The ultimate hub for creative inspiration and innovative prompts across various fields",
     img: "/prompthub.png",
     iconLists: ["FaReact", "RiNextjsLine", "IoLogoJavascript"],
-    link: "https://github.com/youssefwaheed123/prompt-hub",
+    link: "https://github.com/youssefwaheedd/prompt-hub",
     liveLink: "https://prompt-hub.netlify.app/",
   },
 ];
 
+export const mobileProjects: Project[] = [
+  {
+    id: 1,
+    title: 'Aora App',
+    content: 'The ultimate hub to upload and share your AI-generated videos with the world',
+    img: '/aora.png',
+    link: 'https://github.com/youssefwaheedd/aora-app'
+  },
+];
 
 interface Education {
   title: string;
