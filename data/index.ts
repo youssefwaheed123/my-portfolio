@@ -171,7 +171,7 @@ export const javaProjects: Project[] = [
     content:
       "A Java application to create, edit, and delete shapes.",
     img: "./miniPaint.png",
-    link: "https://github.com/youssefwaheeds/miniPaint",
+    link: "https://github.com/youssefwaheedd/miniPaint",
     iconLists: ["FaJava"],
   },
 ];
