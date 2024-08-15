@@ -184,7 +184,7 @@ export const webProjects: Project[] = [
       "Test your memory skills with this interactive Simon game implemented using vanilla JavaScript.",
     img: "/SimonGame.png",
     iconLists: ["FaHtml5", "FaCss3Alt"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    link: "https://github.com/youssefwaheedd/simon-game",
     liveLink: "https://youssefwaheedd.github.io/simon-game/",
   },
   {
