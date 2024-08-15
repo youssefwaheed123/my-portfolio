@@ -6,7 +6,7 @@ import Projects from "@/components/ui/Projects";
 import { StickyScroll } from "@/components/ui/Education";
 import ContactForm from "@/components/ui/ContactForm";
 import { CiLinkedin } from "react-icons/ci";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -44,6 +44,9 @@ export default function Home() {
           </a>
           <a href="https://www.facebook.com/youssef.waheed.10">
             <FaFacebookF className="w-[35px] h-[35px]" />
+          </a>
+          <a href="https://github.com/youssefwaheedd">
+            <FaGithub className="w-[35px] h-[35px]" />
           </a>
         </div>
         <ContactForm />

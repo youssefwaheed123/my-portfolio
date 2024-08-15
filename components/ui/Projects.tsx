@@ -3,7 +3,7 @@ import { Tabs } from "./ProjectTabs"; // Adjust the import path as needed
 import { tabs, webProjects, javaProjects, mobileProjects } from "@/data"; // Adjust the import path as needed
 
 const projects = {
-  All: [...webProjects, ...javaProjects],
+  All: [...webProjects, ...javaProjects, ...mobileProjects],
   "Web Projects": webProjects,
   "Java Projects": javaProjects,
   "Mobile Projects": mobileProjects,

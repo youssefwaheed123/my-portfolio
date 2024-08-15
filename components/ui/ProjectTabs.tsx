@@ -130,14 +130,22 @@ export const Tabs = ({
               href={project.link}
               liveLink={project.liveLink}
               videoLink={project.videoLink}
-              containerClassName="flex flex-col w-80 h-96"
+              containerClassName={
+                "flex flex-col w-80" +
+                (project.title === "Aora App" ? " h-[45rem]" : "")
+              }
               className="p-4 flex-grow"
             >
               <div>
                 <img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-48 object-cover rounded-lg"
+                  className={
+                    "object-cover rounded-lg " +
+                    (project.title === "Aora App"
+                      ? "w-full h-[35rem]"
+                      : "h-48 w-full")
+                  }
                 />
                 <p className="mt-2 text-sm">{project.content}</p>
                 <div className="flex mt-2 space-x-2">
