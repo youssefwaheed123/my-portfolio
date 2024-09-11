@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import { cn } from "@/lib/utils";
-import { BackgroundGradientAnimation } from "./BackgroundGradientAnimation";
 import { GlobeDemo } from "./GridGlobe";
-import { webSkills, programmingSkills, otherSkills } from "@/data";
+import { backendSkills, otherSkills, frontendSkills } from "@/data";
 import { CardContainer, CardBody, CardItem } from "./Card";
 import CopyButton from "./CopyEmailButton";
 import { FaCopy } from "react-icons/fa";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -97,24 +98,26 @@ export const BentoGridItem = ({
                 <br />
               </span>
             ) : id === 4 ? (
-              <div>
-                <span className="text-purple mb-5">{title}</span>
+              <div className="flex flex-col gap-1">
+                <span className="text-purple">{title}</span>
 
-                <CopyButton
-                  icon=<FaCopy />
-                  textToCopy="youssefwaheed@gmail.com"
-                />
+                <div className="flex justify-center items-center">
+                  <CopyButton
+                    icon=<FaCopy />
+                    textToCopy="youssefwaheed@gmail.com"
+                  />
+                </div>
               </div>
             ) : (
               title
             )}
           </div>
           {id === 1 && (
-            <div className="flex flex-col gap-5 lg:gap-8">
-              <h1>WEB SKILLS</h1>
+            <div className="flex flex-col gap-5 lg:gap-8 ">
+              <h1>Frontend</h1>
               <CardContainer className="max-w-4xl w-full">
                 <CardBody className="flex flex-wrap gap-3 lg:gap-8 border border-white/0.01 p-5 rounded-3xl">
-                  {webSkills.map((skill, index) => (
+                  {frontendSkills.map((skill, index) => (
                     <CardItem
                       key={index}
                       className="py-2 flex gap-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#16193a]"
@@ -125,10 +128,10 @@ export const BentoGridItem = ({
                   ))}
                 </CardBody>
               </CardContainer>
-              <h1>PROGRAMMING</h1>
+              <h1>Backend</h1>
               <CardContainer className="max-w-4xl w-full">
                 <CardBody className="flex flex-wrap gap-3 lg:gap-8 border border-white/0.01 p-5 rounded-3xl">
-                  {programmingSkills.map((skill, index) => (
+                  {backendSkills.map((skill, index) => (
                     <CardItem
                       key={index}
                       className="py-2 flex gap-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#16193a]"

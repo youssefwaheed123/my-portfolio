@@ -31,7 +31,7 @@ export const PinContainer = ({
   return (
     <div
       className={cn(
-        `relative group/pin z-50 flex flex-col bg-transparent rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105`,
+        `relative group/pin flex flex-col bg-transparent rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105`,
         containerClassName
       )}
     >

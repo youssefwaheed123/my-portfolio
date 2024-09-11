@@ -12,6 +12,12 @@ const projects = {
 const Projects = () => {
   return (
     <section className="mb-20">
+      <h1
+        id="projects"
+        className="container text-3xl border-b-2 pb-5 text-purple pt-20"
+      >
+        Projects
+      </h1>
       <div className="mt-8">
         <Tabs
           tabs={tabs}

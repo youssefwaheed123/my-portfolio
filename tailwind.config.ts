@@ -28,18 +28,19 @@ const config = {
     extend: {
       colors: {
         black: {
-          DEFAULT: "#000",
           100: "#000319",
           200: "rgba(17, 25, 40, 0.75)",
           300: "rgba(255, 255, 255, 0.125)",
+          500: "#3A3A49",
+          600: "#1A1A1A",
         },
         white: {
-          DEFAULT: "#FFF",
           100: "#BEC1DD",
           200: "#C1C2D3",
+          DEFAULT: "#FFF",
         },
         blue: {
-          "100": "#E4ECFF",
+          100: "#E4ECFF",
         },
         purple: "#CBACF9",
         border: "hsl(var(--border))",
@@ -82,13 +83,29 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        wave: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(40deg)",
+          },
+        },
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
         spotlight: {
           "0%": {
@@ -148,6 +165,7 @@ const config = {
         },
       },
       animation: {
+        wave: "wave 0.7s linear  alternate infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
@@ -168,7 +186,7 @@ const config = {
       let newVars = Object.fromEntries(
         Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
       );
-     
+
       addBase({
         ":root": newVars,
       });
@@ -178,7 +196,7 @@ const config = {
       let newVars = Object.fromEntries(
         Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
       );
-     
+
       addBase({
         ":root": newVars,
       });

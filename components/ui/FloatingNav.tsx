@@ -1,87 +1,65 @@
 "use client";
-import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
-import * as Icons from "react-icons/fa";
+import { navItems } from "@/data";
+import Image from "next/image";
+import React from "react";
 
-interface NavItem {
-  name: string;
-  link: string;
-  icon?: string;
-}
-
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
-  navItems: NavItem[];
-  className?: string;
-}) => {
-  const { scrollYProgress } = useScroll();
-  const [visible, setVisible] = useState(false);
-
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    const previous = scrollYProgress.getPrevious();
-    if (typeof current === "number" && typeof previous === "number") {
-      let direction = current - previous;
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
-    }
-  });
-
+const NavItems = ({ onClick }: { onClick: () => void }) => {
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
-        className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 px-8 py-2 items-center justify-center space-x-4",
-          className
-        )}
-      >
-        {navItems.map((navItem, idx) => {
-          const IconComponent = navItem.icon
-            ? (Icons as any)[navItem.icon]
-            : null;
-          return (
-            <Link
-              key={`link-${idx}`}
-              href={navItem.link}
-              className={cn(
-                "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-              )}
-            >
-              <span className="block sm:hidden">
-                {IconComponent ? <IconComponent /> : navItem.name.charAt(0)}
-              </span>
-              <span className="hidden sm:block text-sm">{navItem.name}</span>
-            </Link>
-          );
-        })}
-      </motion.div>
-    </AnimatePresence>
+    <ul className="nav-ul">
+      {navItems.map((item, index) => (
+        <li key={index} className="nav-li rounded-lg px-2">
+          <a href={item.link} className="nav-li_a" onClick={onClick}>
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 };
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
+  return (
+    <header className="px-5 fixed top-0 left-0 right-0 z-50 bg-black-100">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex justify-between items-center py-5 mx-auto c-space">
+          <a
+            href="#home"
+            className="text-neutral-400 font-bold hover:text-white transition colors"
+          >
+            Welcome!
+          </a>
+          <button
+            onClick={toggleMenu}
+            className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
+            aria-label="Toggle menu"
+          >
+            <Image
+              src={`${isOpen ? "/close.svg" : "/menu.svg"}`}
+              width={6}
+              height={6}
+              alt="toggle"
+              className="w-6 h-6"
+            />
+          </button>
+
+          <nav className="hidden sm:flex">
+            <NavItems onClick={toggleMenu} />
+          </nav>
+        </div>
+      </div>
+      <div className={`nav-sidebar ${isOpen ? "max-h-screen" : "max-h-0"}`}>
+        <nav className="p-5">
+          <NavItems onClick={toggleMenu} />
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;

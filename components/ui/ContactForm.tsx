@@ -3,14 +3,20 @@
 
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
+import { CiLinkedin } from "react-icons/ci";
+import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa";
+import { Button } from "./button";
 
 const ContactForm: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (formRef.current) {
+      setIsSubmitting(true);
       emailjs
         .sendForm(
           "service_yoe6adh",
@@ -20,6 +26,8 @@ const ContactForm: React.FC = () => {
         )
         .then(
           () => {
+            formRef.current?.reset();
+            setIsSubmitting(false);
             alert("Your message has been sent successfully!");
           },
           (error) => {
@@ -32,6 +40,26 @@ const ContactForm: React.FC = () => {
 
   return (
     <section id="contact" className="container mx-auto p-6">
+      <h1
+        id="contact"
+        className="container text-3xl border-b-2 pb-5 text-purple"
+      >
+        Contact Me
+      </h1>
+      <div className="container flex gap-3 p-5 px-8">
+        <a href="https://www.linkedin.com/in/youssefwaheed/">
+          <CiLinkedin className="w-[35px] h-[35px]" />
+        </a>
+        <a href="https://www.instagram.com/youssefwahidd/">
+          <FaInstagram className="w-[35px] h-[35px]" />
+        </a>
+        <a href="https://www.facebook.com/youssef.waheed.10">
+          <FaFacebookF className="w-[35px] h-[35px]" />
+        </a>
+        <a href="https://github.com/youssefwaheedd">
+          <FaGithub className="w-[35px] h-[35px]" />
+        </a>
+      </div>
       <form
         style={{
           background: "rgb(2,0,36)",
@@ -40,9 +68,8 @@ const ContactForm: React.FC = () => {
         }}
         ref={formRef}
         onSubmit={sendEmail}
-        className=" p-8 rounded-lg shadow-lg mt-20"
+        className="px-8 rounded-lg shadow-lg mt-20"
       >
-        <div className="text-white text-xl mb-4">Email Me!</div>
         <input
           placeholder="Your email"
           name="from_name"
@@ -62,11 +89,12 @@ const ContactForm: React.FC = () => {
           className="w-full p-3 mb-4 border border-gray-400 rounded"
           required
         ></textarea>
-        <input
+        <Button
           type="submit"
-          className="w-full p-3 bg-purple-600 text-white rounded cursor-pointer hover:bg-purple-700"
-          value="Send"
-        />
+          className="w-full p-3 text-black rounded cursor-pointer hover:bg-purple-700"
+        >
+          {isSubmitting ? "Sending..." : "Send"}
+        </Button>
       </form>
     </section>
   );
