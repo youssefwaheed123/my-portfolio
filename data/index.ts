@@ -275,7 +275,7 @@ export const experiences: Experience[] = [
     pos: "Computer Engineering Student",
     duration: "2020 - Present",
     title:
-      "I am currently a student at the Faculty of Engineering, Alexandria University with current gpa of 3.6. Lookiing forward to my next adventure after completing my degree next year.",
+      "I am currently a student at the Faculty of Engineering, Alexandria University with current gpa of 3.6. Looking forward to my next adventure after completing my degree next year.",
     icon: "/assets/FacultyOfEngineering.svg",
     animation: "salute",
   },
