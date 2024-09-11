@@ -17,6 +17,7 @@ import { Target } from "lucide-react";
 import ReactLogo from "./GitHubLogo";
 import HackerRoomCanvas from "./HackerRoomCanvas";
 import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -56,14 +57,14 @@ const Hero = () => {
 
           <HackerRoomCanvas />
 
-          <div className="flex gap-4 mt-6 mb-0 text-sm ">
-            <a href="#projects">
+          <div className="flex gap-4 mt-6 mb-0 text-sm z-10">
+            <Link href="#projects">
               <MagicButton
                 title="View my work"
                 position="right"
                 icon={<CiLocationArrow1 />}
               />
-            </a>
+            </Link>
 
             <DownloadButton
               title="Download my CV"
