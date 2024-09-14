@@ -142,7 +142,7 @@ export const BentoGridItem = ({
                   ))}
                 </CardBody>
               </CardContainer>
-              <h1>OTHER</h1>
+              <h1>Other</h1>
               <CardContainer className="max-w-4xl w-full">
                 <CardBody className="flex flex-wrap gap-3 lg:gap-8 border border-white/0.01 p-5 rounded-3xl">
                   {otherSkills.map((skill, index) => (
