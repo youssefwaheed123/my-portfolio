@@ -188,6 +188,15 @@ export const javaProjects: Project[] = [
 
 export const webProjects: Project[] = [
   {
+    id: 0,
+    title: "Tech Flow",
+    content: "User friendly Q&A platform for tech enthusiasts.",
+    img: "/techflow.png",
+    iconLists: ["FaReact", "RiNextjsLine", "IoLogoJavascript"],
+    link: "https://github.com/youssefwaheedd/tech-flow",
+    liveLink: "https://tech--flow.vercel.app/",
+  },
+  {
     id: 1,
     title: "Simon Game",
     content:
