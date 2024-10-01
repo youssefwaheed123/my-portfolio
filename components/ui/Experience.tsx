@@ -14,7 +14,7 @@ const Experience = () => {
   return (
     <section className="my-20" id="experience">
       <div className="w-full text-white-600">
-        <h3 className="text-3x] border-b-2 pb-5 text-purple">Experience</h3>
+        <h3 className="text-3xl container border-b-2 pb-5 text-purple">Experience</h3>
         <div className="work-container">
           <DeveloperAvatarCanvas animationName={animation} />
 
