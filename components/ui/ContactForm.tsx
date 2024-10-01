@@ -39,7 +39,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="container mx-auto p-6">
+    <section id="contact">
       <h1
         id="contact"
         className="container text-3xl border-b-2 pb-5 text-purple"
